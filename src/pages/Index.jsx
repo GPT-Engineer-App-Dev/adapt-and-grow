@@ -22,7 +22,7 @@ const Index = () => {
                 <NavigationMenuLink className="hover:text-blue-400" href="/">Home</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="hover:text-blue-400">Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="hover:text-blue-400 bg-transparent">Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] bg-gray-800 rounded-md shadow-lg">
                     <li className="row-span-3">
