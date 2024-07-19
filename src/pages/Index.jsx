@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,8 +10,26 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    
+    // Here you would typically send the email to your backend
+    // For now, we'll just show a success toast
+    toast({
+      title: "Subscribed!",
+      description: `You've successfully subscribed with: ${email}`,
+    });
+
+    // Clear the input
+    e.target.email.value = "";
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
       <header className="bg-gray-800 text-white p-4">
@@ -102,8 +121,8 @@ const Index = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-              <form className="flex">
-                <Input type="email" placeholder="Enter your email" className="mr-2 bg-gray-700 text-white" />
+              <form onSubmit={handleSubscribe} className="flex">
+                <Input type="email" name="email" placeholder="Enter your email" className="mr-2 bg-gray-700 text-white" required />
                 <Button type="submit" className="bg-blue-600 hover:bg-blue-700">Subscribe</Button>
               </form>
             </div>
