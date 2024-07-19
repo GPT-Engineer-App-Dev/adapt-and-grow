@@ -45,13 +45,13 @@ const Index = () => {
         </div>
       </header>
 
-      <main className="flex-grow p-4">
+      <main className="flex-grow p-4 bg-red-500">
         <Card className="mb-4">
           <CardHeader>
             <CardTitle>Welcome</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>This is a bare-bones application with a navbar. Start building from here!</p>
+            <p>This is a bare-bones application with a navbar and red background. Start building from here!</p>
           </CardContent>
         </Card>
 
