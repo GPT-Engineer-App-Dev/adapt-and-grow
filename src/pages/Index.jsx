@@ -19,23 +19,53 @@ const Index = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/">Home</NavigationMenuLink>
+                <NavigationMenuLink className="hover:text-blue-400" href="/">Home</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="hover:text-blue-400">Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-gray-800">
-                    <li><NavigationMenuLink href="/service1">Service 1</NavigationMenuLink></li>
-                    <li><NavigationMenuLink href="/service2">Service 2</NavigationMenuLink></li>
-                    <li><NavigationMenuLink href="/service3">Service 3</NavigationMenuLink></li>
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] bg-gray-800 rounded-md shadow-lg">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500 to-blue-600 p-6 no-underline outline-none focus:shadow-md"
+                          href="/"
+                        >
+                          <div className="mt-4 text-lg font-medium text-white">Services Overview</div>
+                          <p className="text-sm leading-tight text-white/90">
+                            Explore our range of services designed to meet your needs.
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-700 hover:text-blue-400" href="/service1">
+                          <div className="text-sm font-medium leading-none">Service 1</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+                            Description for Service 1
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <a className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-700 hover:text-blue-400" href="/service2">
+                          <div className="text-sm font-medium leading-none">Service 2</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+                            Description for Service 2
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/about">About</NavigationMenuLink>
+                <NavigationMenuLink className="hover:text-blue-400" href="/about">About</NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink href="/contact">Contact</NavigationMenuLink>
+                <NavigationMenuLink className="hover:text-blue-400" href="/contact">Contact</NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
