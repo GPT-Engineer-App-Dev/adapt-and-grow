@@ -12,7 +12,7 @@ import {
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100">
       <header className="bg-gray-800 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">My Application</h1>
@@ -24,7 +24,7 @@ const Index = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-gray-800">
                     <li><NavigationMenuLink href="/service1">Service 1</NavigationMenuLink></li>
                     <li><NavigationMenuLink href="/service2">Service 2</NavigationMenuLink></li>
                     <li><NavigationMenuLink href="/service3">Service 3</NavigationMenuLink></li>
@@ -39,23 +39,23 @@ const Index = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" className="text-white border-white hover:bg-gray-700">
             Toggle Theme
           </Button>
         </div>
       </header>
 
-      <main className="flex-grow p-4 bg-red-500">
-        <Card className="mb-4">
+      <main className="flex-grow p-4">
+        <Card className="mb-4 bg-gray-800 text-white">
           <CardHeader>
             <CardTitle>Welcome</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>This is a bare-bones application with a navbar and red background. Start building from here!</p>
+            <p>This is a bare-bones application with a dark theme. Start building from here!</p>
           </CardContent>
         </Card>
 
-        <Button>Click me</Button>
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white">Click me</Button>
       </main>
 
       <footer className="bg-gray-800 text-white py-8">
@@ -68,16 +68,16 @@ const Index = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">Quick Links</h3>
               <ul>
-                <li><a href="#" className="hover:underline">Home</a></li>
-                <li><a href="#" className="hover:underline">Services</a></li>
-                <li><a href="#" className="hover:underline">Contact</a></li>
+                <li><a href="#" className="hover:text-blue-400">Home</a></li>
+                <li><a href="#" className="hover:text-blue-400">Services</a></li>
+                <li><a href="#" className="hover:text-blue-400">Contact</a></li>
               </ul>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Newsletter</h3>
               <form className="flex">
-                <Input type="email" placeholder="Enter your email" className="mr-2" />
-                <Button type="submit">Subscribe</Button>
+                <Input type="email" placeholder="Enter your email" className="mr-2 bg-gray-700 text-white" />
+                <Button type="submit" className="bg-blue-600 hover:bg-blue-700">Subscribe</Button>
               </form>
             </div>
           </div>
