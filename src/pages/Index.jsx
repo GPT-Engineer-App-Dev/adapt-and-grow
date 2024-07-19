@@ -69,9 +69,6 @@ const Index = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button variant="outline" size="sm" className="text-white border-white hover:bg-gray-700">
-            Toggle Theme
-          </Button>
         </div>
       </header>
 
