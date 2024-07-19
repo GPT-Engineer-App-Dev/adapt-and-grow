@@ -1,12 +1,51 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-gray-800 text-white p-4">
-        <h1 className="text-2xl font-bold">My Application</h1>
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">My Application</h1>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/">Home</NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+                    <li><NavigationMenuLink href="/service1">Service 1</NavigationMenuLink></li>
+                    <li><NavigationMenuLink href="/service2">Service 2</NavigationMenuLink></li>
+                    <li><NavigationMenuLink href="/service3">Service 3</NavigationMenuLink></li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/about">About</NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/contact">Contact</NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <Button variant="outline" size="icon">
+            <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </div>
       </header>
 
       <main className="flex-grow p-4">
@@ -15,7 +54,7 @@ const Index = () => {
             <CardTitle>Welcome</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>This is a bare-bones application. Start building from here!</p>
+            <p>This is a bare-bones application with a navbar. Start building from here!</p>
           </CardContent>
         </Card>
 
